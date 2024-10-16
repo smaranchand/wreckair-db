@@ -31,7 +31,6 @@ def check_site_status(url):
     try:
         response = requests.get(url, timeout=7)
         return response.status_code == 200
-    #print something tlike site is up here
     except requests.RequestException:
         return False
 
@@ -71,7 +70,7 @@ def make_site_busy(url):
                 elapsed_seconds = elapsed_time.total_seconds()
                 # Print success message when the site is down
                 print(f"[SUCCESS] Voilà! The site appears to be down. (Elapsed time: {elapsed_seconds:.2f} seconds)")
-                time.sleep(10)  # Adjust the sleep time as needed to control the request frequency
+                time.sleep(8)  # Adjust the sleep time as needed to control the request frequency
     except KeyboardInterrupt:
         # Handle keyboard interrupt and print total elapsed time
         total_elapsed_time = datetime.now() - start_time
